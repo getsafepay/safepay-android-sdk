@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="blue">#193a8c</color> <!-- Blue color for the background -->
+    <color name="green">#008080</color> <!-- Example green color -->
+
+    <color name="bg_color_sheet">#FFFFFF</color>
+    <color name="footer_desc_color">#818181</color>
+    <color name="button_bg_color">#193a8c</color>
+    <color name="btn_disable_color">#DCDCDC</color>
+
+    <color name="button_text_color">#686868</color>
+    <color name="edit_field_text_color">#686868</color>
+    <color name="flag_bg">#E0E5E9</color>
+    <color name="red">#EF1641</color>
+
+    <color name="dark_green">#025E49</color>
+    <color name="desc">#818181</color>
+
+
+
+
+</resources>

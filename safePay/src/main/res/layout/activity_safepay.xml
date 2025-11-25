@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/bg_sheet"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginStart="16dp"
+        android:id="@+id/cancel"
+        android:layout_marginTop="14dp"
+        app:srcCompat="@drawable/ic_cancel"
+        android:layout_height="wrap_content"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/scroll"
+        android:layout_height="wrap_content">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <ProgressBar
+                    android:id="@+id/trackerProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:progressTint="@color/blue"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/blue"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"/>
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingStart="16dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:background="@drawable/bg_edittext"
+                        android:layout_marginTop="16dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/regular"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:hint="@string/enter_your_email_address" />
+
+                    <ProgressBar
+                        android:id="@+id/emailProgress"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:visibility="gone"
+                        android:progressTint="@color/blue"
+                        android:indeterminate="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="35dp"
+                        android:indeterminateTint="@color/blue"
+                        android:layout_gravity="right|center_vertical" />
+
+                </FrameLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/phoneLayout"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@drawable/bg_edittext"
+                    android:layout_height="50dp">
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/phone"
+                        android:layout_width="90dp"
+                        android:layout_height="50dp"
+                        app:ccp_hintExampleNumber="true"
+                        app:ccp_autoDetectCountry="false"
+                        app:ccp_showFlag="true"
+                        android:layout_gravity="top"
+                        app:ccp_showPhoneCode="true"
+                        app:ccpDialog_showNameCode="true"
+                        android:paddingStart="8dp"
+                        app:ccp_showArrow="false"
+                        app:ccp_autoFormatNumber="true"
+                        app:ccp_textSize="14sp"
+                        app:ccpDialog_keyboardAutoPopup="false"
+                        android:gravity="center_vertical"
+                        app:ccp_showNameCode="false"
+                        app:ccp_showFullName="false"/>
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:id="@+id/etPhoneNumber"
+                        android:background="@null"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/regular"
+                        android:gravity="center_vertical"
+                        android:hint="Mobile phone number"
+                        android:layout_height="match_parent"/>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:id="@+id/passwordLayout"
+                    android:layout_height="wrap_content">
+
+                    <!-- Card Details -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enter Your Password"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/sf_pro_bold"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="24dp"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="We have found an account associated with your email.If you wish to login and use your saved card, please enter your password"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/regular"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/desc" />
+
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/passwordFieldLayout"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_edittext"
+                        android:layout_marginHorizontal="16dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Enter Password"
+                            android:padding="12dp"
+                            android:gravity="center_vertical"
+                            android:background="@null"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/regular"
+                            android:textSize="15sp"
+                            android:id="@+id/etPassword"
+                            android:inputType="textPassword" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_eye_open"
+                            android:id="@+id/icPasswordToggle"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginEnd="20dp"/>
+
+
+
+                    </FrameLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp">
+
+
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="0dp"
+                            android:layout_height="55dp"
+                            android:layout_weight="1"
+                            android:text="Pay Manually"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:padding="12dp"
+                            android:textColor="@color/colorWhite"
+                            android:layout_gravity="center"
+                            android:id="@+id/btnPayManually"
+                            android:fontFamily="@font/regular"
+                            android:textSize="16sp"
+                            android:textAllCaps="false"
+                            android:background="@drawable/bg_black_btn"/>
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:text="Login"
+                                android:layout_marginStart="6dp"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:padding="12dp"
+                                android:textAllCaps="false"
+                                android:id="@+id/btnLogin"
+                                android:fontFamily="@font/regular"
+                                android:textSize="16sp"
+                                android:textColor="@color/colorWhite"
+                                android:background="@drawable/bg_button"
+                                android:inputType="date" />
+
+                            <ProgressBar
+                                android:id="@+id/progressBarPassword"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:visibility="gone"
+                                android:progressTint="@color/white"
+                                android:indeterminate="true"
+                                android:indeterminateTint="@color/white"
+                                android:layout_gravity="center|center_vertical" />
+
+                        </FrameLayout>
+
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+                <include
+                    android:id="@+id/layoutPaymentMethod"
+                    layout="@layout/layout_payment_method"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:id="@+id/cardLayout"
+                    android:layout_height="wrap_content">
+
+                    <!-- Card Details -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Card Details"
+                            android:textSize="18sp"
+                            android:id="@+id/tvHeadingCard"
+                            android:fontFamily="@font/sf_pro_bold"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="24dp"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cancel"
+                            android:textSize="18sp"
+                            android:id="@+id/tvCardDetailCancel"
+                            android:visibility="gone"
+                            android:fontFamily="@font/sf_pro_bold"
+                            android:gravity="right"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="24dp"
+                            android:textColor="@color/blue" />
+
+                    </LinearLayout>
+
+
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Card number"
+                            android:padding="12dp"
+                            android:gravity="center_vertical"
+                            android:id="@+id/etCardNumber"
+                            android:layout_marginTop="12dp"
+                            android:maxLength="19"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/regular"
+                            android:imeOptions="actionNext"
+                            android:layout_marginHorizontal="16dp"
+                            android:background="@drawable/bg_edittext"
+                            android:inputType="number" />
+
+                        <ImageView
+                            android:id="@+id/cardTypeImageView"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginEnd="40dp"/>
+                    </FrameLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:hint="Expiry MM/YY"
+                            android:gravity="center_vertical"
+                            android:maxLength="5"
+                            android:imeOptions="actionNext"
+                            android:padding="12dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/regular"
+                            android:id="@+id/etExpiry"
+                            android:textSize="15sp"
+                            android:background="@drawable/bg_edittext"
+                            android:inputType="date" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:hint="CVC"
+                            android:gravity="center_vertical"
+                            android:padding="12dp"
+                            android:textColor="@color/black"
+                            android:imeOptions="actionNext"
+                            android:id="@+id/etCVC"
+                            android:fontFamily="@font/regular"
+                            android:textSize="15sp"
+                            android:maxLength="3"
+                            android:layout_marginStart="6dp"
+                            android:background="@drawable/bg_edittext"
+                            android:inputType="numberPassword" />
+
+                    </LinearLayout>
+
+                    <!-- Billing Address -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Billing Address"
+                        android:fontFamily="@font/sf_pro_bold"
+                        android:textSize="18sp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="24dp"
+                        android:textColor="#000" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:hint="First name"
+                            android:gravity="left|center_vertical"
+                            android:textColor="@color/black"
+                            android:padding="12dp"
+                            android:imeOptions="actionNext"
+                            android:fontFamily="@font/regular"
+                            android:textSize="15sp"
+                            android:id="@+id/etFirstName"
+                            android:background="@drawable/bg_edittext"
+                            android:inputType="textPersonName" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:hint="Last name"
+                            android:gravity="left|center_vertical"
+                            android:id="@+id/etLastName"
+                            android:textColor="@color/black"
+                            android:padding="12dp"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/regular"
+                            android:imeOptions="actionNext"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/bg_edittext"
+                            android:inputType="textPersonName" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_height="wrap_content">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:paddingStart="8dp"
+                            android:id="@+id/countryLayout"
+                            android:background="@drawable/bg_edittext"
+                            android:layout_height="50dp">
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:id="@+id/hintCountry"
+                                android:hint="Country"
+                                android:textSize="15sp"
+                                android:gravity="left|center_vertical"
+                                android:textColor="#E3E2E6"
+                                android:layout_height="match_parent"/>
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="right|center_vertical"
+                                app:srcCompat="@drawable/ic_drop_down"
+                                android:layout_marginEnd="8dp"
+                                android:layout_height="wrap_content"/>
+
+
+                            <com.hbb20.CountryCodePicker
+                                android:id="@+id/country_code"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                app:ccp_defaultNameCode="PK"
+                                app:ccp_hintExampleNumber="true"
+                                app:ccp_autoDetectCountry="false"
+                                app:ccp_showFlag="false"
+                                app:ccpDialog_showPhoneCode="false"
+                                android:layout_gravity="top"
+                                app:ccp_showPhoneCode="false"
+                                app:ccpDialog_showFlag="true"
+                                app:ccpDialog_showNameCode="false"
+                                app:ccp_textSize="15sp"
+                                app:ccp_showArrow="false"
+                                android:visibility="gone"
+                                android:gravity="center_vertical"
+                                app:ccp_showNameCode="false"
+                                app:ccp_showFullName="true"/>
+
+                        </FrameLayout>
+
+                        <!--  <androidx.appcompat.widget.AppCompatSpinner
+                              android:layout_width="190dp"
+                              android:layout_height="55dp"
+                              android:layout_marginTop="8dp"
+                              android:hint="Country / Region"
+                              android:padding="12dp"
+                              android:background="@drawable/bg_edittext" />-->
+
+
+
+
+                    </RelativeLayout>
+
+                    <Spinner
+                        android:id="@+id/spinnerState"
+                        android:layout_height="50dp"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:spinnerMode="dialog"
+                        android:background="@drawable/bg_spinner"
+                        android:layout_marginHorizontal="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="State"
+                        android:padding="12dp"
+                        android:id="@+id/etState"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:imeOptions="actionNext"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:visibility="gone"
+                        android:fontFamily="@font/regular"
+                        android:gravity="left|center_vertical"
+                        android:background="@drawable/bg_edittext"
+                        android:inputType="textPostalAddress" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="City"
+                        android:padding="12dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:textColor="@color/black"
+                        android:imeOptions="actionNext"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/regular"
+                        android:gravity="left|center_vertical"
+                        android:background="@drawable/bg_edittext"
+                        android:inputType="textCapWords" />
+
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Street Address"
+                        android:padding="12dp"
+                        android:id="@+id/etStreetAddress"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/regular"
+                        android:gravity="left|center_vertical"
+                        android:background="@drawable/bg_edittext"
+                        android:inputType="textPostalAddress" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etPostalCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Postal Code"
+                        android:padding="12dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/regular"
+                        android:gravity="left|center_vertical"
+                        android:background="@drawable/bg_edittext" />
+
+
+                    <!-- Checkbox for Saving Card -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginTop="16dp"
+                        android:id="@+id/layoutSaveCard"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/cbSaveCard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:text="Securely save my card information"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/sf_pro_bold"
+                            android:theme="@style/CheckBoxCustomTheme"
+                            android:textColor="#000" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Pay faster anywhere Safepay is accepted"
+                            android:textSize="13sp"
+                            android:layout_marginStart="48dp"
+                            android:textColor="@color/desc" />
+
+
+                    </LinearLayout>
+
+
+                    <include
+                        android:id="@+id/guestPasswordFieldLayout"
+                        android:visibility="gone"
+                        layout="@layout/layout_save_card_password"/>
+
+                </LinearLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:text=""
+                    android:id="@+id/txtError"
+                    android:layout_marginTop="12dp"
+                    android:visibility="gone"
+                    android:textSize="15sp"
+                    android:padding="10dp"
+                    android:fontFamily="@font/regular"
+                    android:layout_marginHorizontal="16dp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnPaySaveCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:background="@drawable/bg_save_card_btn"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/sf_pro_bold"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    android:paddingHorizontal="12dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blue"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Pay with your saved card" />
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/btnPayLayout"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnPay"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="@drawable/bg_disable_btn"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/sf_pro_bold"
+                        android:textSize="18sp"
+                        android:enabled="false"
+                        android:textAllCaps="false"
+                        android:textColor="@color/button_text_color"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:visibility="gone"
+                        android:progressTint="@color/white"
+                        android:indeterminate="true"
+                        android:indeterminateTint="@color/white"
+                        android:layout_gravity="center_horizontal|center_vertical" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="25dp"
+                        android:layout_gravity="center_vertical|right"
+                        android:layout_marginEnd="25dp"
+                        android:tint="@color/white"
+                        android:id="@+id/imgLock"
+                        android:elevation="8dp"
+                        android:src="@android:drawable/ic_lock_lock"
+                        android:layout_height="25dp"/>
+                </FrameLayout>
+
+
+
+
+                <include
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/footer"
+                    android:layout_marginTop="16dp"
+                    layout="@layout/layout_footer"/>
+
+            </LinearLayout>
+
+
+            <FrameLayout
+                android:id="@+id/overlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:visibility="gone"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </FrameLayout>
+
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+        <include
+            android:id="@+id/layoutPaymentSuccess"
+            android:visibility="gone"
+            layout="@layout/layout_payment_success"/>
+</LinearLayout>

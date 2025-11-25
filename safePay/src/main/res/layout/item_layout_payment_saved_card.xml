@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:id="@+id/root"
+    android:layout_height="wrap_content">
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/blue"
+            android:id="@+id/radio"
+            android:clickable="false"
+            android:backgroundTint="@color/blue"
+            android:checked="false" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="30dp"
+            tools:src="@drawable/ic_visa"
+            android:id="@+id/cardType"
+            android:layout_gravity="center_vertical"
+            android:layout_height="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="&#8226; &#8226; &#8226; &#8226; 1231"
+            android:layout_marginStart="8dp"
+            android:id="@+id/tvCardNumber"
+            android:fontFamily="@font/sf_pro_bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+
+</LinearLayout>

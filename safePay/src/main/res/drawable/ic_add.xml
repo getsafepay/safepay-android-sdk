@@ -1,0 +1,33 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="32dp"
+    android:height="32dp"
+    android:viewportWidth="32"
+    android:viewportHeight="32">
+
+  <!-- Box Path -->
+  <path
+      android:pathData="M22,0H10C4.477,0 0,4.477 0,10V22C0,27.523 4.477,32 10,32H22C27.523,32 32,27.523 32,22V10C32,4.477 27.523,0 22,0Z"
+      android:fillColor="@color/blue" />
+
+  <!-- Box Border -->
+  <path
+      android:strokeWidth="1"
+      android:pathData="M22,0.5H10C4.753,0.5 0.5,4.753 0.5,10V22C0.5,27.247 4.753,31.5 10,31.5H22C27.247,31.5 31.5,27.247 31.5,22V10C31.5,4.753 27.247,0.5 22,0.5Z"
+      android:fillColor="#00000000"
+      android:strokeColor="@color/blue" />
+
+  <!-- Horizontal Line of the Plus Icon -->
+  <path
+      android:pathData="M9,16H23"
+      android:strokeColor="#FFFFFF"
+      android:strokeWidth="2"
+      android:strokeLineCap="round" />
+
+  <!-- Vertical Line of the Plus Icon -->
+  <path
+      android:pathData="M16,9V23"
+      android:strokeColor="#FFFFFF"
+      android:strokeWidth="2"
+      android:strokeLineCap="round" />
+
+</vector>

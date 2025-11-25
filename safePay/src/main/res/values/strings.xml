@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enter_your_email_address">Enter your email address</string>
+    <string name="terms_privacy">Terms</string>
+    <string name="privacy">Privacy</string>
+
+
+    <string name="error_msg">Encountered an error while performing payer authentication: payer could not be authenticated. Please try again with a different card or another form of payment.</string>
+    <string name="error_time_based_token">Error: Looks like a required parameters "Timebase token" is expired or invalid, please check tracker configuration and try again.</string>
+</resources>

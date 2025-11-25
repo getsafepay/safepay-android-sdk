@@ -1,0 +1,1 @@
+# safepay-android-sdk

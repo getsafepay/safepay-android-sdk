@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/mainContainer"
+    android:background="@drawable/rounded_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp">
+
+    <!-- Green Rounded Bottom Sheet -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="100dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/ic_shield"
+            android:layout_height="100dp"/>
+
+        <!-- Tick Image -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/tickImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_logo"
+            android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true" />
+
+        <!-- Payment Success Text -->
+        <TextView
+            android:id="@+id/successTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Your Amount is"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            android:fontFamily="@font/regular"
+            android:layout_below="@id/tickImageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Successfully Paid"
+            android:textColor="@color/blue"
+            android:layout_gravity="center_horizontal"
+            android:textSize="36sp"
+            android:fontFamily="@font/regular"
+            android:layout_centerHorizontal="true"/>
+    </LinearLayout>
+
+</RelativeLayout>
