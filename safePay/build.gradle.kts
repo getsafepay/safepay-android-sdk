@@ -1,8 +1,8 @@
 import org.gradle.internal.impldep.bsh.commands.dir
 
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
@@ -67,4 +67,3 @@ dependencies {
 
 
 }
-
