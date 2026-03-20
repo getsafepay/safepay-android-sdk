@@ -205,7 +205,11 @@ class SafepayCardFieldView @JvmOverloads constructor(
         onCardChangeListener?.onCardChange(buildDetails())
     }
 
-    private fun buildDetails(): CardFieldDetails {
+    fun currentCardDetails(includeSensitiveData: Boolean = false): CardFieldDetails {
+        return buildDetails(includeSensitiveData)
+    }
+
+    private fun buildDetails(includeSensitiveData: Boolean = dangerouslyGetFullCardDetails): CardFieldDetails {
         val numberText = cardNumberEditText.text?.toString().orEmpty()
         val cleanedNumber = numberText.replace(" ", "")
         val last4 = if (cleanedNumber.length >= 4) cleanedNumber.takeLast(4) else null
@@ -223,8 +227,8 @@ class SafepayCardFieldView @JvmOverloads constructor(
 
         val complete = validNumber == "Valid" && validExpiry == "Valid" && validCvc == "Valid"
 
-        val number = if (dangerouslyGetFullCardDetails) cleanedNumber else null
-        val cvc = if (dangerouslyGetFullCardDetails) cvcEditText.text?.toString() else null
+        val number = if (includeSensitiveData) cleanedNumber else null
+        val cvc = if (includeSensitiveData) cvcEditText.text?.toString() else null
 
         return CardFieldDetails(
             brand = brand,

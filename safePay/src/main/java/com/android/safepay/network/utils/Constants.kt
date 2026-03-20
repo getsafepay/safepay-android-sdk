@@ -4,4 +4,5 @@ object Constants
 {
     const val SANDBOX_BASE_URL = "https://sandbox.api.getsafepay.com/"
     const val DEV_BASE_URL = "https://dev.api.getsafepay.com/"
+    const val PRODUCTION_BASE_URL = "https://api.getsafepay.com/"
 }
