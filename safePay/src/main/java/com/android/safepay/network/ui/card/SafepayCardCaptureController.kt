@@ -112,14 +112,14 @@ class SafepayCardCaptureController(
             entryMode = "raw",
             action = "PAYER_AUTH_SETUP",
             payload =
+                // isMobile omitted: web device data collection flow, so the response carries an access token and DDC URL.
                 PayerAuthenticationRequest.Payload(
-                    isMobile = true,
                     paymentMethod =
                         PayerAuthenticationRequest.PaymentMethod(
                             card =
                                 PayerAuthenticationRequest.Card(
                                     cardNumber = cardNumber,
-                                    expirationMonth = expiryMonth.toString(),
+                                    expirationMonth = expiryMonth.toString().padStart(2, '0'),
                                     expirationYear = expiryYear.toString(),
                                     cvv = cvc,
                                 ),
