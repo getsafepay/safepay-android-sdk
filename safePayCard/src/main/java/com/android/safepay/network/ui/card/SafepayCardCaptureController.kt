@@ -1,13 +1,11 @@
 package com.android.safepay.network.ui.card
 
 import android.content.Context
-import com.android.safepay.network.APIService
 import com.android.safepay.network.error.ErrorResponse
 import com.android.safepay.network.error.LoginErrorResponse
 import com.android.safepay.network.error.PaymentError
 import com.android.safepay.network.model.payment.PayerAuthenticationRequest
 import com.android.safepay.network.model.payment.PayerAuthenticationResponse
-import com.android.safepay.network.network.RetrofitInstance
 import com.android.safepay.network.utils.Constants
 import com.google.gson.Gson
 import retrofit2.Response
@@ -50,10 +48,8 @@ class SafepayCardCaptureController(
         configuration: SafepayCardCaptureConfiguration,
     ) : this(configuration, SafepayCardFieldView(context))
 
-    private val apiService: APIService by lazy {
-        RetrofitInstance
-            .createRetrofit(configuration.environment.baseUrl)
-            .create(APIService::class.java)
+    private val apiService: CardCaptureApiService by lazy {
+        CardCaptureApiService.create(configuration.environment.baseUrl)
     }
 
     fun validate(): Boolean {

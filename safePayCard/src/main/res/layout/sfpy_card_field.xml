@@ -15,15 +15,15 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginHorizontal="16dp"
-            android:background="@drawable/bg_edittext"
-            android:fontFamily="@font/regular"
+            android:background="@drawable/sfpy_card_input_background"
+            android:fontFamily="@font/sfpy_card_regular"
             android:gravity="center_vertical"
             android:hint="Card number"
             android:imeOptions="actionNext"
             android:inputType="number"
             android:maxLength="19"
             android:padding="12dp"
-            android:textColor="@color/black"
+            android:textColor="@color/sfpy_card_text"
             android:textSize="15sp" />
 
         <ImageView
@@ -47,15 +47,15 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_edittext"
-            android:fontFamily="@font/regular"
+            android:background="@drawable/sfpy_card_input_background"
+            android:fontFamily="@font/sfpy_card_regular"
             android:gravity="center_vertical"
             android:hint="Expiry MM/YY"
             android:imeOptions="actionNext"
             android:inputType="number"
             android:maxLength="5"
             android:padding="12dp"
-            android:textColor="@color/black"
+            android:textColor="@color/sfpy_card_text"
             android:textSize="15sp" />
 
         <androidx.appcompat.widget.AppCompatEditText
@@ -64,15 +64,15 @@
             android:layout_height="50dp"
             android:layout_marginStart="6dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_edittext"
-            android:fontFamily="@font/regular"
+            android:background="@drawable/sfpy_card_input_background"
+            android:fontFamily="@font/sfpy_card_regular"
             android:gravity="center_vertical"
             android:hint="CVC"
             android:imeOptions="actionNext"
             android:inputType="numberPassword"
             android:maxLength="4"
             android:padding="12dp"
-            android:textColor="@color/black"
+            android:textColor="@color/sfpy_card_text"
             android:textSize="15sp" />
     </LinearLayout>
 </LinearLayout>

@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatEditText
-import com.android.safepay.R
+import com.android.safepay.card.R
 import com.android.safepay.network.utils.CardType
 import java.util.Calendar
 
@@ -61,7 +61,7 @@ class SafepayCardFieldView @JvmOverloads constructor(
     private var cachedExpiryYear: Int? = null
 
     init {
-        LayoutInflater.from(context).inflate(R.layout.view_safepay_card_field, this, true)
+        LayoutInflater.from(context).inflate(R.layout.sfpy_card_field, this, true)
         cardNumberEditText = findViewById(R.id.sfpyCardNumber)
         expiryEditText = findViewById(R.id.sfpyExpiry)
         cvcEditText = findViewById(R.id.sfpyCvc)
