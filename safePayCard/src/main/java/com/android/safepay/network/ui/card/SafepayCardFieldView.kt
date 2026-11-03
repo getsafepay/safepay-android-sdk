@@ -27,8 +27,9 @@ class SafepayCardFieldView @JvmOverloads constructor(
         val validNumber: String,
         val validExpiryDate: String,
         val validCvc: String,
-        val number: String?,
-        val cvc: String?,
+        // Raw card data: only the SDK reads these, to submit the card.
+        internal val number: String?,
+        internal val cvc: String?,
     )
 
     enum class FocusField {
@@ -52,8 +53,6 @@ class SafepayCardFieldView @JvmOverloads constructor(
 
     private var onCardChangeListener: OnCardChangeListener? = null
     private var onFocusChangeListener: OnFocusChangeListener? = null
-
-    var dangerouslyGetFullCardDetails: Boolean = false
 
     private var isFormattingCardNumber = false
     private var isFormattingExpiry = false
@@ -205,11 +204,11 @@ class SafepayCardFieldView @JvmOverloads constructor(
         onCardChangeListener?.onCardChange(buildDetails())
     }
 
-    fun currentCardDetails(includeSensitiveData: Boolean = false): CardFieldDetails {
+    internal fun currentCardDetails(includeSensitiveData: Boolean = false): CardFieldDetails {
         return buildDetails(includeSensitiveData)
     }
 
-    private fun buildDetails(includeSensitiveData: Boolean = dangerouslyGetFullCardDetails): CardFieldDetails {
+    private fun buildDetails(includeSensitiveData: Boolean = false): CardFieldDetails {
         val numberText = cardNumberEditText.text?.toString().orEmpty()
         val cleanedNumber = numberText.replace(" ", "")
         val last4 = if (cleanedNumber.length >= 4) cleanedNumber.takeLast(4) else null

@@ -83,6 +83,6 @@ To place the field in an XML layout instead, add a `com.android.safepay.network.
 
 The controller also has `validate()`, `fetchValidity()`, `focus()`, `blur()` and `clear()`.
 
-`CardFieldDetails` contains the card number and CVC only when you call `cardFieldView.currentCardDetails(includeSensitiveData = true)` or set `dangerouslyGetFullCardDetails = true`. Avoid both: handling raw card data brings your app into PCI DSS scope.
+`CardFieldDetails` gives you the brand, last four digits, expiry and validation state. The card number and CVC are never exposed to your app, which keeps raw card data out of it.
 
 For React Native, use [`@sfpy/react-native`](https://github.com/getsafepay/sfpy-react-native), which wraps this controller.
