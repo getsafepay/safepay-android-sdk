@@ -45,5 +45,12 @@ class PaymentError(
                 msg = "It appears that your payment tracker has already been started or completed. Please contact support."
             )
         }
+
+        fun invalidCardDetails(): PaymentError {
+            return PaymentError(
+                code = "PT-1002",
+                msg = "Card details are incomplete or invalid. Please check the entered card details and try again."
+            )
+        }
     }
 }

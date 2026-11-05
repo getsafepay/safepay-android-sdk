@@ -38,3 +38,4 @@ dependencyResolutionManagement {
 rootProject.name = "SafePay"
 include(":app")
 include(":safePay")
+include(":safePayCard")
