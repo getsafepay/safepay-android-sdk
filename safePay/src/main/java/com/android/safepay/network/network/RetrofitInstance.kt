@@ -3,7 +3,6 @@ package com.android.safepay.network.network
 import com.android.safepay.network.APIService
 import com.android.safepay.network.utils.Constants
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -19,12 +18,9 @@ object RetrofitInstance
         else
             Constants.DEV_BASE_URL
     }
-    private val loggingInterceptor = HttpLoggingInterceptor().apply {
-        level = HttpLoggingInterceptor.Level.BODY
-    }
 
+    // No HTTP body logging: requests carry the raw card number and CVV.
     private val client = OkHttpClient.Builder()
-        .addInterceptor(loggingInterceptor)
         .build()
 
     private val retrofit by lazy {
